@@ -858,7 +858,10 @@ jQuery(document).ready(function($) {
 
 				color = bird.material.color;
 				if(bird_type=='bw'){
-					color.r = color.g = color.b = ( 500 - bird.position.z ) / 1000;
+					color.r = 52;
+					color.g = 146;
+					color.b = 235;
+					//color.r = color.g = color.b = ( 500 - bird.position.z ) / 1000;
 				}
 
 				bird.rotation.y = Math.atan2( - boid.velocity.z, boid.velocity.x );
