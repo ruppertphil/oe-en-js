@@ -22,12 +22,12 @@ jQuery(document).ready(function($) {
 		var directionX = $(this).attr('data-directionX');
 		var directionY = $(this).attr('data-directionY');
 		var density = $(this).attr('data-density');
-		
+
 		selector.prepend('<div class="pb_row particle_matrix" data-dotColor="'+dotColor+'" data-lineColor="'+lineColor+'"  data-particleRadius="'+particleRadius+'" data-lineWidth="'+lineWidth+'" data-minSpeedX="'+minSpeedX+'" data-maxSpeedX="'+maxSpeedX+'" data-minSpeedY="'+minSpeedY+'" data-maxSpeedY="'+maxSpeedY+'" data-directionX="'+directionX+'" data-directionY="'+directionY+'" data-density="'+density+'"></div>');
-		
+
 		$(this).remove();
 	});
-	
+
 	$('.particle_matrix').each( function() {
 		var dotColor = $(this).attr('data-dotColor');
 		var lineColor = $(this).attr('data-lineColor');
@@ -40,7 +40,7 @@ jQuery(document).ready(function($) {
 		var directionX = $(this).attr('data-directionX');
 		var directionY = $(this).attr('data-directionY');
 		var density = parseInt($(this).attr('data-density'));
-		
+
 		$(this).particleground({
 			dotColor: dotColor,
 			lineColor: lineColor,
@@ -55,7 +55,7 @@ jQuery(document).ready(function($) {
 			density: density,
 		});
 	});
-	
+
 	$('.particle_smoke_ref').each( function() {
 		var selector = $(this).prevAll('.pb_bg:first');
 		if(!selector.length) {
@@ -76,12 +76,12 @@ jQuery(document).ready(function($) {
 		var bgColorInner = $(this).attr('data-bgColorInner');
 		var bgColorOuter = $(this).attr('data-bgColorOuter');
 		var speed = $(this).attr('data-speed');
-		
+
 		selector.prepend('<div class="pb_row particle_smoke" data-gradientEnd="'+gradientEnd+'" data-gradientStart="'+gradientStart+'" data-lineWidth="'+lineWidth+'" data-numCircles="'+numCircles+'" data-radiusSize="'+radiusSize+'" data-smokeOpacity="'+smokeOpacity+'" data-bgColorInner="'+bgColorInner+'" data-bgColorOuter="'+bgColorOuter+'" data-speed="'+speed+'"><canvas></canvas></div>');
-		
+
 		$(this).remove();
 	});
-	
+
 	$('.particle_smoke').each( function() {
 		var gradientEnd = $(this).attr('data-gradientEnd');
 		var gradientStart = $(this).attr('data-gradientStart');
@@ -92,7 +92,7 @@ jQuery(document).ready(function($) {
 		var bgColorInner = $(this).attr('data-bgColorInner');
 		var bgColorOuter = $(this).attr('data-bgColorOuter');
 		var speed = parseInt($(this).attr('data-speed'));
-		
+
 		if(!gradientEnd) gradientEnd = '#222222';
 		if(!gradientStart) gradientStart = '#000000';
 		if(!lineWidth) lineWidth = 1;
@@ -102,7 +102,7 @@ jQuery(document).ready(function($) {
 		if(!bgColorInner) bgColorInner = '#ffffff';
 		if(!bgColorOuter) bgColorOuter = '#666666';
 		if(!speed) speed = 1;
-		
+
 		$(this).waterpipe({
 			gradientStart: gradientStart,
 			gradientEnd: gradientEnd,
@@ -120,7 +120,7 @@ jQuery(document).ready(function($) {
 			drawsPerFrame: 10,
 		});
 	});
-	
+
 	$('.particle_rain_ref').each( function() {
 		var selector = $(this).prevAll('.pb_bg:first');
 		if(!selector.length) {
@@ -136,10 +136,10 @@ jQuery(document).ready(function($) {
 		var preset = $(this).attr('data-preset');
 		var imgblurness = $(this).attr('data-imgblurness');
 		selector.prepend('<div class="pb_row particle_rain" data-imgblurness="'+imgblurness+'" data-rainbg="'+imgsrc+'" data-preset="'+preset+'"></div>');
-		
+
 		$(this).remove();
 	});
-	
+
 	$('.particle_rain').each( function(index) {
 		var parent = this;
 		var width = $(this).width();
@@ -179,12 +179,12 @@ jQuery(document).ready(function($) {
 				engine.rain([ [3, 3, 0.88], [5, 5, 0.9], [6, 2, 1] ], 100);
 			}
 		};
-		
+
 		image.crossOrigin = 'anonymous';
         image.src = imgsrc;
-		
+
 	});
-	
+
 	$('.particle_pjs_ref').each( function() {
 		var selector = $(this).prevAll('.pb_bg:first');
 		if(!selector.length) {
@@ -204,93 +204,93 @@ jQuery(document).ready(function($) {
 		var scolor = $(this).attr('data-scolor');
 		var sides = $(this).attr('data-sides');
 		var count = $(this).attr('data-count');
-		
+
 		var size = $(this).attr('data-size');
 		var srandom = $(this).attr('data-srandom');
 		var sanimate = $(this).attr('data-sanimate');
 		var sanispeed = $(this).attr('data-sanispeed');
 		var smin = $(this).attr('data-smin');
-		
+
 		if(srandom == "yes") { srandom = true } else { srandom = false; }
 		if(sanimate == "yes") { sanimate = true; } else { sanimate = false; }
-		
+
 		var opacity = $(this).attr('data-opacity');
 		var orandom = $(this).attr('data-orandom');
 		var oanimate = $(this).attr('data-oanimate');
 		var oanispeed = $(this).attr('data-oanispeed');
 		var omin = $(this).attr('data-omin');
-		
+
 		if(orandom == "yes") { orandom = true } else { orandom = false; }
 		if(oanimate == "yes") { oanimate = true; } else { oanimate = false; }
-		
+
 		var llink = $(this).attr('data-link');
 		var ldistance = $(this).attr('data-ldistance');
 		var lcolor = $(this).attr('data-lcolor');
 		var lopacity = $(this).attr('data-lopacity');
 		var lwidth = $(this).attr('data-lwidth');
-		
+
 		if(llink == "yes") { llink = true } else { llink = false; }
-		
+
 		var move = $(this).attr('data-move');
 		var direction = $(this).attr('data-direction');
 		var mrandom = $(this).attr('data-mrandom');
 		var mstraight = $(this).attr('data-mstraight');
 		var mspeed = $(this).attr('data-mspeed');
 		var omode = $(this).attr('data-omode');
-		
+
 		if(move == "yes") { move = true } else { move = false; }
 		if(mrandom == "yes") { mrandom = true } else { mrandom = false; }
 		if(mstraight == "yes") { mstraight = true } else { mstraight = false; }
-		
+
 		var ohover = $(this).attr('data-hover');
 		var onhover = $(this).attr('data-onhover');
 		var oclick = $(this).attr('data-click');
 		var onclick = $(this).attr('data-onclick');
-		
+
 		if(ohover == "yes") { ohover = true } else { ohover = false; }
 		if(oclick == "yes") { oclick = true } else { oclick = false; }
-		
+
 		if(!shape) shape = "circle";
 		if(!pcolor) pcolor = "#ffffff";
 		if(!stroke) stroke = 0;
 		if(!scolor) scolor = "#ffffff";
 		if(!sides) sides = 5;
 		if(!count) count = 80;
-		
+
 		if(!size) size = 5;
 		if(!srandom) srandom = false;
 		if(!sanimate) sanimate = false;
 		if(!sanispeed) sanispeed = 40;
 		if(!smin) smin = 0.1;
-		
+
 		if(!opacity) opacity = 0.5;
 		if(!orandom) orandom = false;
 		if(!oanimate) oanimate = false;
 		if(!oanispeed) oanispeed = 1;
 		if(!omin) omin = 0.1;
-		
+
 		if(!llink) llink = false;
 		if(!ldistance) ldistance = 150;
 		if(!lcolor) lcolor = "#ffffff";
 		if(!lopacity) lopacity = 0.4;
 		if(!lwidth) lwidth = 1;
-		
+
 		if(!move) move = false;
 		if(!direction) direction = "none";
 		if(!mrandom) mrandom = false;
 		if(!mstraight) mstraight = false;
 		if(!mspeed) mspeed = 6;
 		if(!omode) omode = "out";
-		
+
 		if(!ohover) ohover = false;
 		if(!onhover) onhover = "repulse";
 		if(!oclick) oclick = false;
 		if(!onclick) onclick = "push";
-		
+
 		selector.prepend('<div class="pb_row particle_pjs" id="'+id+'"></div>');
-		
+
 		$(this).remove();
-		
+
 		var param = {
 		  "particles": {
 			"number": {
@@ -399,11 +399,11 @@ jQuery(document).ready(function($) {
 		  },
 		  "retina_detect": true,
 		};
-		
+
 		particlesJS( id , param , function() {
   			console.log('Particles Generated');
 		});
-		
+
 	});
 
 	$('.flat_surf_ref').each( function() {
@@ -432,9 +432,9 @@ jQuery(document).ready(function($) {
 		var zoffset = $(this).attr('data-zoffset');
 		var lambient = $(this).attr('data-lambient');
 		var ldiffuse = $(this).attr('data-ldiffuse');
-		
+
 		selector.prepend('<div id="'+id+'" class="pb_row flat_surface_shader"></div>');
-		
+
 		$(this).remove();
 
 		//------------------------------
@@ -734,7 +734,7 @@ jQuery(document).ready(function($) {
 
 		// Let there be light!
   		initialise();
-	
+
 	});
 
 	$('.three_bird_ref').each( function() {
@@ -754,10 +754,10 @@ jQuery(document).ready(function($) {
 
 		if(bird_count < 1 || !bird_count) {
 			bird_count = 200;
-		} 
+		}
 
 		selector.prepend('<div id="'+id+'" class="pb_row three_birds"></div>');
-		
+
 		$(this).remove();
 
 		var container = document.getElementById(id);
@@ -787,9 +787,9 @@ jQuery(document).ready(function($) {
 				boid.position.x = Math.random() * 400 - 200;
 				boid.position.y = Math.random() * 400 - 200;
 				boid.position.z = Math.random() * 400 - 200;
-				boid.velocity.x = Math.random() * 2 - 1;
-				boid.velocity.y = Math.random() * 2 - 1;
-				boid.velocity.z = Math.random() * 2 - 1;
+				boid.velocity.x = Math.random() - .9;
+				boid.velocity.y = Math.random() - .9;
+				boid.velocity.z = Math.random() - .9;
 				boid.setAvoidWalls( true );
 				boid.setWorldSize( 500, 500, 400 );
 
@@ -799,7 +799,7 @@ jQuery(document).ready(function($) {
 
 
 			}
-				
+
 			//var renderer = new THREE.WebGLRenderer( { alpha: true } );
 			renderer = new THREE.CanvasRenderer( { alpha: true } );
 			renderer.setClearColor( 0x000000, 0 );
@@ -858,10 +858,10 @@ jQuery(document).ready(function($) {
 
 				color = bird.material.color;
 				if(bird_type=='bw'){
-					/*color.r = 52;
+					color.r = 52;
 					color.g = 146;
-					color.b = 235;*/
-					color.r = color.g = color.b = ( 500 - bird.position.z ) / 1000;
+					color.b = 235;
+					//color.r = color.g = color.b = ( 500 - bird.position.z ) / 1000;
 				}
 
 				bird.rotation.y = Math.atan2( - boid.velocity.z, boid.velocity.x );
@@ -928,11 +928,11 @@ jQuery(document).ready(function($) {
 		    canvas.width  = width  = bounds.x = window.innerWidth;
 		    canvas.height = height = bounds.y = window.innerHeight;
 		}; resize();
-		
+
 		for(var i = 0; i < settings.particleNum; i += 1) {
 		    particles.push(new Particle(p, bounds, rctx, monitor));
 		}
-		
+
 		+(function render() {
 		    requestAnimFrame(render);
 		    context.beginPath();
@@ -981,12 +981,12 @@ jQuery(document).ready(function($) {
 		function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 		var max_particles = aliancount;
-		
+
 		var tela = document.getElementById(id);
 		tela.width = $(selector).outerWidth();
 		tela.height = $(selector).outerHeight();
 		var canvas = tela.getContext('2d');
-		
+
 		var Particle = function () {
 			function Particle(canvas, progress) {
 			    _classCallCheck(this, Particle);
@@ -1076,7 +1076,7 @@ jQuery(document).ready(function($) {
 		  requestAnimationFrame(update.bind(this));
 		}
 		update();
-		
+
 	});
 
 	$('.three_waves_ref').each( function() {
@@ -1094,7 +1094,7 @@ jQuery(document).ready(function($) {
 		var wcolor = $(this).attr('data-color');
 
 		selector.prepend('<div id="'+id+'" class="pb_row three_waves"></div>');
-		
+
 		$(this).remove();
 
 		var container = document.getElementById(id);
@@ -1104,27 +1104,27 @@ jQuery(document).ready(function($) {
 		var SEPARATION = 100,
         AMOUNTX = 100,
         AMOUNTY = 70;
- 
+
 	    var camera, scene, renderer;
 	    var particles, particle, count = 0;
-	 
+
 	    var mouseX = 85,
 	        mouseY = -342;
-	 
+
 	    var windowHalfX = window.innerWidth / 2;
 	    var windowHalfY = window.innerHeight / 2;
-	 
+
 	    init();
 	    animate();
-	 
+
 	    function init() {
-	 
+
 	        camera = new THREE.PerspectiveCamera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
 	        camera.position.z = 1000;
-	 
+
 	        scene = new THREE.Scene();
 	        particles = new Array();
-	 
+
 	        var PI2 = Math.PI * 2;
 	        var material = new THREE.SpriteMaterial({
 	            color: wcolor,
@@ -1134,9 +1134,9 @@ jQuery(document).ready(function($) {
 	                context.fill();
 	            }
 	        });
-	 
+
 	        var i = 0;
-	 
+
 	        for (var ix = 0; ix < AMOUNTX; ix++) {
 	            for (var iy = 0; iy < AMOUNTY; iy++) {
 	                particle = particles[i++] = new THREE.Sprite(material);
@@ -1145,36 +1145,36 @@ jQuery(document).ready(function($) {
 	                scene.add(particle);
 	            }
 	        }
-	 
+
 	        renderer = new THREE.CanvasRenderer({ alpha: true });
 	        renderer.setClearColor( 0x000000, 0 );
 	        renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
 	        container.appendChild(renderer.domElement);
-	 
+
 	        document.addEventListener('mousemove', onDocumentMouseMove, false);
 	        document.addEventListener('touchstart', onDocumentTouchStart, false);
 	        document.addEventListener('touchmove', onDocumentTouchMove, false);
-	 
+
 	        window.addEventListener('resize', onWindowResize, false);
 	    }
-	 
+
 	    function onWindowResize() {
-	 
+
 	        windowHalfX = window.innerWidth / 2;
 	        windowHalfY = window.innerHeight / 2;
-	 
+
 	        camera.aspect = window.innerWidth / window.innerHeight;
 	        camera.updateProjectionMatrix();
-	 
+
 	        renderer.setSize(window.innerWidth, window.innerHeight);
-	 
+
 	    }
-	 
+
 	    function onDocumentMouseMove(event) {
 	        mouseX = event.clientX - windowHalfX;
 	        mouseY = event.clientY - windowHalfY;
 	    }
-	 
+
 	    function onDocumentTouchStart(event) {
 	        if (event.touches.length === 1) {
 	            event.preventDefault();
@@ -1182,7 +1182,7 @@ jQuery(document).ready(function($) {
 	            mouseY = event.touches[0].pageY - windowHalfY;
 	        }
 	    }
-	 
+
 	    function onDocumentTouchMove(event) {
 	        if (event.touches.length === 1) {
 	            event.preventDefault();
@@ -1195,7 +1195,7 @@ jQuery(document).ready(function($) {
 	        requestAnimationFrame(animate);
 	        render();
 	    }
-	 
+
 	    function render() {
 	        camera.position.x += (mouseX - camera.position.x) * .05;
 	        camera.position.y += (-mouseY - camera.position.y) * .05;
@@ -1236,7 +1236,7 @@ jQuery(document).ready(function($) {
 		data['lcolor3'] = $(this).attr('data-lcolor3');
 
 		selector.prepend('<canvas class="pb_row pb_ambient" id="'+id+'" ></canvas>');
-		
+
 		$(this).remove();
 
 		var particles
@@ -1274,7 +1274,7 @@ jQuery(document).ready(function($) {
 		var spacepspeed = $(this).attr('data-spacepspeed');
 
 		selector.prepend('<div id="'+id+'" class="pb_row pb_space"></div>');
-		
+
 		$(this).remove();
 
 		var container = document.getElementById(id);
@@ -1290,9 +1290,9 @@ jQuery(document).ready(function($) {
 		camera.position.z = 1000;
 
 		var scene = new THREE.Scene();
-		
+
 		scene.add(camera);
-		
+
 		renderer = new THREE.CanvasRenderer( { alpha: true } );
 		renderer.setClearColor( 0x000000, 0 );
 		renderer.setPixelRatio( window.devicePixelRatio );
@@ -1324,7 +1324,7 @@ jQuery(document).ready(function($) {
 		}
 
 		function update() {
-			requestAnimationFrame( update);  
+			requestAnimationFrame( update);
 			for (var i = 0; i < particles.length; i++) {
 				particle = particles[i];
 				particle.position.z += speed;
@@ -1335,5 +1335,5 @@ jQuery(document).ready(function($) {
 
 
 	});
-	
+
 });
